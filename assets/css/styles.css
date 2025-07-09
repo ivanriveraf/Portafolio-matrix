@@ -1,0 +1,117 @@
+/* Fondo canvas matrix */
+canvas#matrixCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: black;
+}
+
+/* Estilo general del contenido */
+.content {
+  position: relative;
+  z-index: 1;
+  color: #00ff00;
+  font-family: 'Courier New', Courier, monospace;
+  padding-top: 30px;
+}
+
+/* Secciones */
+.section {
+  padding: 50px 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0 0 10px #00ff00;
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Animación desde el centro */
+.fade-section {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.fade-section.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Imagen de perfil */
+.foto {
+  width: 150px;
+  border-radius: 50%;
+  border: 3px solid #00ff00;
+  transition: box-shadow 0.3s ease;
+}
+
+.foto:hover {
+  box-shadow: 0 0 10px 5px #00ff00;
+  cursor: pointer;
+}
+
+/* Bio */
+.bio-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.bio-text h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #0f0;
+}
+
+.bio-text p {
+  font-size: 1.2rem;
+  color: #9f9;
+}
+
+/* Proyectos */
+.proyecto {
+  background-color: rgba(0, 255, 0, 0.1);
+  border: 1px solid #0f0;
+  text-align: center;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.proyecto:hover {
+  transform: scale(1.05);
+  background-color: rgba(0, 255, 0, 0.2);
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid #00ff00;
+  padding-top: 20px;
+  font-size: 1rem;
+}
+
+/* Sección ampliada de perfil */
+#detallePerfil {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 2px solid #00ff00;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+#detallePerfil img {
+  max-width: 200px;
+  border-radius: 10px;
+  border: 2px solid #0f0;
+  margin-bottom: 10px;
+}
+
+/* Animación */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}

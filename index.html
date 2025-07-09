@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portafolio Matrix</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <!-- Canvas Matrix -->
+  <canvas id="matrixCanvas"></canvas>
+
+  <!-- Contenido -->
+  <div class="content container">
+
+    <!-- Sección Bienvenida -->
+    <section id="bienvenida" class="section fade-section">
+      <div class="bio-container">
+        <img src="assets/img/perfil_mio_resized.jpg" alt="Tu Foto" class="foto" id="fotoPerfil" />
+        <div class="bio-text">
+          <h1>Bienvenido a mi Portafolio</h1>
+          <p>Hola, soy Iván Patricio Rivera Fuentealba. Aquí conocerás más sobre mí y mis proyectos.</p>
+        </div>
+      </div>
+
+      <!-- Sección emergente con más info -->
+      <div id="detallePerfil" class="text-center fade-section">
+        <img src="assets/img/perfil_mio_resized.jpg" alt="Foto Ampliada">
+        <p class="mt-2 text-success">Desde joven estuve interesado en todo el ambito de programacion solo que no lo sabia, pero siempre tuve el pensamiento relacionado a aplicaciones logicas de este.
+          Actualmente estoy estudiando a diario para poder completar todos los proyectos que tengo pensado en mi mente. En este portafolio podras navegar a traves de mis proyectos actuales y futuros. Una vez mas bienvenido y que disfutes.
+        </p>
+      </div>
+    </section>
+
+    <!-- Botón jQuery -->
+    <div class="text-center">
+      <button id="toggleProyectos" class="btn btn-outline-success mb-4">Mostrar/Ocultar Proyectos</button>
+    </div>
+
+    <!-- Sección Proyectos -->
+    <section id="proyectos" class="section fade-section">
+      <h2 class="mb-4">Mis Proyectos</h2>
+      <div class="row">
+        <div class="col-md-4 mb-3"><div class="proyecto p-3">Proyecto 1</div></div>
+        <div class="col-md-4 mb-3"><div class="proyecto p-3">Proyecto 2</div></div>
+        <div class="col-md-4 mb-3"><div class="proyecto p-3">Proyecto 3</div></div>
+        <div class="col-md-4 mb-3"><div class="proyecto p-3">Proyecto 4</div></div>
+        <div class="col-md-4 mb-3"><div class="proyecto p-3">Proyecto 5</div></div>
+        <div class="col-md-4 mb-3"><div class="proyecto p-3">Proyecto 6</div></div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="section text-center fade-section">
+      <h2>Contacto</h2>
+      <p>Sígueme en:</p>
+      <div style="font-size: 1.5rem;">
+        <a href="https://github.com/ivanriveraf" target="_blank" class="me-3 text-success"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://www.instagram.com/ivan.rifu/" target="_blank" class="text-success"><i class="fab fa-instagram"></i> Instagram</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="assets/js/matrix.js"></script>
+  <script>
+    // Mostrar u ocultar detalle de perfil al hacer click
+    $('#fotoPerfil').on('click', function (e) {
+      e.stopPropagation(); // prevenir que se cierre inmediatamente
+      $('#detallePerfil').slideToggle('slow');
+    });
+
+    // Cerrar al hacer click fuera del contenedor
+    $(document).on('click', function (e) {
+      if (!$(e.target).closest('#detallePerfil, #fotoPerfil').length) {
+        $('#detallePerfil').slideUp('slow');
+      }
+    });
+
+    // Scroll Reveal con IntersectionObserver
+    const sections = document.querySelectorAll('.fade-section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    sections.forEach(section => observer.observe(section));
+
+    // jQuery Toggle Proyectos
+    $('#toggleProyectos').on('click', function () {
+      $('#proyectos').toggle('slow');
+    });
+  </script>
+</body>
+</html>
