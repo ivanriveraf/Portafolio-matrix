@@ -9,46 +9,88 @@ canvas#matrixCanvas {
   background-color: black;
 }
 
+/*Capa oscura encima del fondo para bajar intensidad del efecto */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); 
+  z-index: 0;
+  pointer-events: none;
+}
+
 /* Estilo general del contenido */
 .content {
   position: relative;
-  z-index: 1;
-  color: #00ff00;
+  z-index: 1; 
+  color: #c8ffb0; 
   font-family: 'Courier New', Courier, monospace;
   padding-top: 30px;
+  line-height: 1.6; 
 }
 
 /* Secciones */
 .section {
   padding: 50px 20px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.75);
   border-radius: 10px;
   margin-bottom: 40px;
-  box-shadow: 0 0 10px #00ff00;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.4); 
   transition: opacity 1s ease, transform 1s ease;
 }
 
-/* Animación desde el centro */
+/* Base para todas las animaciones de scroll */
 .fade-section {
   opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Cuando entra en pantalla, se le agrega .visible desde JS */
+.fade-section.visible {
+  opacity: 1;
+}
+
+/* Variantes de animación */
+
+/* Escala suave  */
+.fade-scale {
   transform: scale(0.95);
 }
 
-.fade-section.visible {
-  opacity: 1;
+.fade-scale.visible {
   transform: scale(1);
 }
+
+/* Sube desde abajo */
+.fade-up {
+  transform: translateY(25px);
+}
+
+.fade-up.visible {
+  transform: translateY(0);
+}
+
 
 /* Imagen de perfil */
 .foto {
   width: 150px;
+  max-width: 150px;  
+  height: auto;       
   border-radius: 50%;
   border: 3px solid #00ff00;
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  display: block;
+}
+
+.aviso-foto {
+  font-size: 0.85rem;
+  color: #9f9;
+  opacity: 0.9;
 }
 
 .foto:hover {
   box-shadow: 0 0 10px 5px #00ff00;
+  transform: scale(1.03);
   cursor: pointer;
 }
 
@@ -60,42 +102,52 @@ canvas#matrixCanvas {
   flex-wrap: wrap;
 }
 
-.bio-text h1 {
-  font-size: 2rem;
+/* Hero tipo landing */
+.hero-section {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-layout {
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Columna de la foto en el hero */
+.hero-photo {
+  flex: 0 0 auto;
+}
+/* Imagen de la foto en el hero */
+.hero-photo img {
+  width: 150px;
+  max-width: 150px;
+  height: auto;
+}
+
+
+/* Textos del hero */
+.hero-title {
+  font-size: 2.4rem;
+  margin-bottom: 15px;
+  color: #00ff88;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: #d4ffd4;
   margin-bottom: 10px;
-  color: #0f0;
 }
 
-.bio-text p {
-  font-size: 1.2rem;
+.hero-extra {
+  font-size: 0.95rem;
   color: #9f9;
-}
-
-/* Proyectos */
-.proyecto {
-  background-color: rgba(0, 255, 0, 0.1);
-  border: 1px solid #0f0;
-  text-align: center;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-}
-
-.proyecto:hover {
-  transform: scale(1.05);
-  background-color: rgba(0, 255, 0, 0.2);
-}
-
-/* Footer */
-footer {
-  border-top: 1px solid #00ff00;
-  padding-top: 20px;
-  font-size: 1rem;
 }
 
 /* Sección ampliada de perfil */
 #detallePerfil {
   display: none;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.85);
   border: 2px solid #00ff00;
   border-radius: 10px;
   padding: 20px;
@@ -105,13 +157,179 @@ footer {
 
 #detallePerfil img {
   max-width: 200px;
+  width: 100%;
+  height: auto;
   border-radius: 10px;
   border: 2px solid #0f0;
   margin-bottom: 10px;
 }
 
-/* Animación */
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
+
+/* Aviso debajo de la foto */
+.aviso-foto {
+  font-size: 0.85rem;
+  color: #9f9;
+  opacity: 0.9;
 }
+
+/* Responsive hero */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: auto;
+  }
+
+  .hero-layout {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+}
+
+
+.bio-text h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #00ff88; 
+}
+
+.bio-text p {
+  font-size: 1.1rem;
+  color: #d4ffd4; 
+}
+
+/* Proyectos */
+.proyecto {
+  background-color: rgba(0, 0, 0, 0.8); 
+  border: 1px solid #00ff88;
+  text-align: center;
+  border-radius: 10px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.proyecto:hover {
+  transform: scale(1.05);
+  background-color: rgba(0, 255, 0, 0.18);
+  box-shadow: 0 0 18px rgba(0, 255, 136, 0.4);
+}
+
+.project-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #00ff88; /* verde brillante */
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(0, 255, 136, 0.4); /* subrayado neón suave */
+  text-shadow: 0 0 6px rgba(0, 255, 136, 0.6); /* glow */
+}
+
+/* Footer Matrix pro */
+.footer-matrix {
+  background-color: rgba(0, 0, 0, 0.85);
+  border-top: 1px solid #00ff88;
+  padding-top: 30px;
+  padding-bottom: 25px;
+  box-shadow: 0 -5px 20px rgba(0, 255, 136, 0.2);
+}
+
+.footer-title {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  color: #00ff88;
+}
+
+.footer-text {
+  font-size: 0.95rem;
+  color: #c8ffb0;
+  margin-bottom: 20px;
+}
+
+/* Contenedor de links sociales */
+.social-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Cada link */
+.social-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #d4ffd4;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* Círculo con icono */
+.social-icon-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #00ff88;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+  box-shadow: 0 0 12px rgba(0, 255, 136, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.social-icon-circle i {
+  font-size: 1.4rem;
+}
+
+/* Texto bajo el ícono */
+.social-label {
+  letter-spacing: 0.5px;
+}
+
+/* Hover neón Matrix */
+.social-link:hover .social-icon-circle {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.8);
+  background-color: rgba(0, 255, 136, 0.1);
+}
+
+.social-link:hover {
+  color: #00ff88;
+}
+
+/* Copy */
+.footer-copy {
+  font-size: 0.8rem;
+  color: #8f8;
+  opacity: 0.8;
+}
+
+/* Responsive footer */
+@media (max-width: 576px) {
+  .footer-title {
+    font-size: 1.4rem;
+  }
+
+  .social-icon-circle {
+    width: 45px;
+    height: 45px;
+  }
+
+  .social-icon-circle i {
+    font-size: 1.2rem;
+  }
+
+  .footer-text {
+    padding: 0 10px;
+  }
+}
+
+/* Fin styles.css */
+

@@ -18,55 +18,237 @@
   <!-- Canvas Matrix -->
   <canvas id="matrixCanvas"></canvas>
 
-  <!-- Contenido -->
+  <!-- Contenido principal -->
   <div class="content container">
 
-    <!-- Sección Bienvenida -->
-    <section id="bienvenida" class="section fade-section">
-      <div class="bio-container">
-        <img src="assets/img/perfil_mio_resized.jpg" alt="Tu Foto" class="foto" id="fotoPerfil" />
-        <div class="bio-text">
-          <h1>Bienvenido a mi Portafolio</h1>
-          <p>Hola, soy Iván Patricio Rivera Fuentealba. Aquí conocerás más sobre mí y mis proyectos.</p>
-        </div>
-      </div>
+   <section id="bienvenida" class="section hero-section fade-section fade-scale">
+  <div class="bio-container hero-layout">
+    <!-- Columna imagen + aviso -->
+    <div class="hero-photo text-center text-md-start">
+      <img 
+        src="assets/img/perfil_mio_resized.jpg" 
+        alt="Foto de Iván Patricio Rivera Fuentealba" 
+        class="foto" 
+        id="fotoPerfil" 
+      />
+      <p class="mt-2 aviso-foto">
+        Haz clic en mi foto para ver mi biografía completa.
+      </p>
+    </div>
 
-      <!-- Sección emergente con más info -->
-      <div id="detallePerfil" class="text-center fade-section">
-        <img src="assets/img/perfil_mio_resized.jpg" alt="Foto Ampliada">
-        <p class="mt-2 text-success">Desde joven estuve interesado en todo el ambito de programacion solo que no lo sabia, pero siempre tuve el pensamiento relacionado a aplicaciones logicas de este.
-          Actualmente estoy estudiando a diario para poder completar todos los proyectos que tengo pensado en mi mente. En este portafolio podras navegar a traves de mis proyectos actuales y futuros. Una vez mas bienvenido y que disfutes.
-        </p>
-      </div>
-    </section>
+    <!-- Columna texto -->
+    <div class="bio-text">
+      <h1 class="hero-title">Iván Rivera Desarrollador Fullstack</h1>
+      <p class="hero-subtitle">
+        Desarrollador web en formación, con enfoque en JavaScript, Node.js y la creación de 
+        aplicaciones claras, funcionales y orientadas a la experiencia de usuario. 
+        Aquí encontrarás algunos de los proyectos que he desarrollado durante mi formación 
+        en Talento Digital y a través de aprendizaje autodidacta.
+      </p>
+      <p class="hero-extra">
+        Este portafolio está inspirado en la estética de Matrix y reúne mis trabajos más 
+        representativos en APIs REST, autenticación, manejo de archivos, simulaciones y sitios web informativos.
+      </p>
+    </div>
+  </div>
+
+  <!-- Sección emergente con más info -->
+  <div id="detallePerfil" class="text-center fade-section fade-up">
+    <img 
+      src="assets/img/perfil_mio_resized.jpg" 
+      alt="Foto ampliada de Iván" 
+    />
+    <p class="mt-2 text-success">
+      Soy desarrollador web en formación con interés en construir aplicaciones claras, 
+      funcionales y fáciles de usar. Durante mi proceso de aprendizaje he trabajado con 
+      JavaScript, Node.js, Express, bases de datos y APIs REST, desarrollando proyectos 
+      que van desde simuladores y sistemas de autoservicio hasta aplicaciones con autenticación 
+      y manejo de archivos. Me motiva seguir aprendiendo, mejorar la calidad de mi código 
+      y aportar en equipos donde pueda crecer tanto a nivel técnico como humano.
+    </p>
+  </div>
+</section>
+
 
     <!-- Botón jQuery -->
     <div class="text-center">
-      <button id="toggleProyectos" class="btn btn-outline-success mb-4">Mostrar/Ocultar Proyectos</button>
+      <button id="toggleProyectos" class="btn btn-outline-success mb-4">
+        Mostrar/Ocultar Proyectos
+      </button>
     </div>
 
-    <!-- Sección Proyectos -->
-    <section id="proyectos" class="section fade-section">
-      <h2 class="mb-4">Mis Proyectos</h2>
-      <div class="row">
-        <div class="col-md-4 mb-3"><div class="proyecto p-3">Proyecto 1</div></div>
-        <div class="col-md-4 mb-3"><div class="proyecto p-3">Proyecto 2</div></div>
-        <div class="col-md-4 mb-3"><div class="proyecto p-3">Proyecto 3</div></div>
-        <div class="col-md-4 mb-3"><div class="proyecto p-3">Proyecto 4</div></div>
-        <div class="col-md-4 mb-3"><div class="proyecto p-3">Proyecto 5</div></div>
-        <div class="col-md-4 mb-3"><div class="proyecto p-3">Proyecto 6</div></div>
+    <!-- Sección Proyectos (adaptada) -->
+<section id="proyectos" class="section projects-section py-5 fade-section fade-up">
+      <div class="container">
+        <h2 class="text-center mb-4">Proyectos Destacados</h2>
+        <p class="text-center mb-5">
+          Estos son algunos de los proyectos que desarrollé durante el bootcamp, 
+          enfocados en JavaScript, Node.js y buenas prácticas de desarrollo web.
+        </p>
+
+        <div class="row g-4">
+          <!-- Proyecto 1: API REST -->
+          <div class="col-md-6 col-lg-4">
+            <div class="project-card h-100">
+              <h3 class="project-title">API REST con JWT y Bcrypt</h3>
+              <p class="project-description">
+                API REST para gestión de usuarios con registro, login y protección de rutas
+                mediante autenticación JWT y encriptación de contraseñas con Bcrypt.
+              </p>
+              <p class="project-tech">
+                <strong>Tecnologías:</strong> Node.js, Express, JWT, Bcrypt, Sequelize
+              </p>
+              <p class="project-learning">
+                <strong>Aprendizaje:</strong> manejo de autenticación, middleware y seguridad básica.
+              </p>
+              <div class="project-links">
+                <a href="TU_LINK_GITHUB_API" target="_blank" class="btn btn-sm btn-outline-light">Ver código</a>
+                <a href="TU_LINK_DEMO_API" target="_blank" class="btn btn-sm btn-outline-success">Ver demo</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Proyecto 2: Mini red social -->
+          <div class="col-md-6 col-lg-4">
+            <div class="project-card h-100">
+              <h3 class="project-title">Mini red social con likes</h3>
+              <p class="project-description">
+                Aplicación donde los usuarios pueden publicar contenido, dar like e interactuar 
+                con imágenes y textos, simulando una red social básica.
+              </p>
+              <p class="project-tech">
+                <strong>Tecnologías:</strong> HTML, CSS, JavaScript, Express, Multer
+              </p>
+              <p class="project-learning">
+                <strong>Aprendizaje:</strong> manejo de imágenes, rutas y actualización dinámica del DOM.
+              </p>
+              <div class="project-links">
+                <a href="TU_LINK_GITHUB_REDSOCIAL" target="_blank" class="btn btn-sm btn-outline-light">Ver código</a>
+                <a href="TU_LINK_DEMO_REDSOCIAL" target="_blank" class="btn btn-sm btn-outline-success">Ver demo</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Proyecto 3: Carga y validación de archivos -->
+          <div class="col-md-6 col-lg-4">
+            <div class="project-card h-100">
+              <h3 class="project-title">Gestor de archivos con Multer</h3>
+              <p class="project-description">
+                Sistema para subir, validar, renombrar y eliminar archivos en el servidor,
+                incluyendo validaciones de tipo y tamaño.
+              </p>
+              <p class="project-tech">
+                <strong>Tecnologías:</strong> Node.js, Express, Multer, JavaScript
+              </p>
+              <p class="project-learning">
+                <strong>Aprendizaje:</strong> manejo de uploads, validaciones avanzadas y manejo de errores.
+              </p>
+              <div class="project-links">
+                <a href="TU_LINK_GITHUB_MULTER" target="_blank" class="btn btn-sm btn-outline-light">Ver código</a>
+                <a href="TU_LINK_DEMO_MULTER" target="_blank" class="btn btn-sm btn-outline-success">Ver demo</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Proyecto 4: Autoservicio supermercado -->
+          <div class="col-md-6 col-lg-4">
+            <div class="project-card h-100">
+              <h3 class="project-title">Simulador de autoservicio</h3>
+              <p class="project-description">
+                Simulación de una terminal de autoservicio de supermercado con registro de compras,
+                descuentos y validaciones de entrada.
+              </p>
+              <p class="project-tech">
+                <strong>Tecnologías:</strong> JavaScript (ES6+), HTML, CSS
+              </p>
+              <p class="project-learning">
+                <strong>Aprendizaje:</strong> lógica de negocio, validaciones y manejo de estados en el front.
+              </p>
+              <div class="project-links">
+                <a href="TU_LINK_GITHUB_AUTOSERVICIO" target="_blank" class="btn btn-sm btn-outline-light">Ver código</a>
+                <a href="TU_LINK_DEMO_AUTOSERVICIO" target="_blank" class="btn btn-sm btn-outline-success">Ver demo</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Proyecto 5: Ciberseguridad -->
+          <div class="col-md-6 col-lg-4">
+            <div class="project-card h-100">
+              <h3 class="project-title">Sitio de ciberseguridad</h3>
+              <p class="project-description">
+                Sitio informativo sobre buenas prácticas de ciberseguridad para usuarios
+                que comienzan en el mundo digital.
+              </p>
+              <p class="project-tech">
+                <strong>Tecnologías:</strong> HTML, CSS, Bootstrap, JavaScript
+              </p>
+              <p class="project-learning">
+                <strong>Aprendizaje:</strong> estructura de contenido, diseño responsivo y experiencia de usuario.
+              </p>
+              <div class="project-links">
+                <a href="TU_LINK_GITHUB_CIBERSEGURIDAD" target="_blank" class="btn btn-sm btn-outline-light">Ver código</a>
+                <a href="TU_LINK_DEMO_CIBERSEGURIDAD" target="_blank" class="btn btn-sm btn-outline-success">Ver demo</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Proyecto 6: Tienda online -->
+          <div class="col-md-6 col-lg-4">
+            <div class="project-card h-100">
+              <h3 class="project-title">Tienda online con Node y Sequelize</h3>
+              <p class="project-description">
+                Tienda online con manejo de productos, base de datos, modelos y operaciones CRUD
+                utilizando Sequelize.
+              </p>
+              <p class="project-tech">
+                <strong>Tecnologías:</strong> Node.js, Express, Sequelize, PostgreSQL/MySQL
+              </p>
+              <p class="project-learning">
+                <strong>Aprendizaje:</strong> ORM, modelos, migraciones y conexión a base de datos.
+              </p>
+              <div class="project-links">
+                <a href="TU_LINK_GITHUB_TIENDA" target="_blank" class="btn btn-sm btn-outline-light">Ver código</a>
+                <a href="TU_LINK_DEMO_TIENDA" target="_blank" class="btn btn-sm btn-outline-success">Ver demo</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="section text-center fade-section">
-      <h2>Contacto</h2>
-      <p>Sígueme en:</p>
-      <div style="font-size: 1.5rem;">
-        <a href="https://github.com/ivanriveraf" target="_blank" class="me-3 text-success"><i class="fab fa-github"></i> GitHub</a>
-        <a href="https://www.instagram.com/ivan.rifu/" target="_blank" class="text-success"><i class="fab fa-instagram"></i> Instagram</a>
-      </div>
-    </footer>
+        <!--footer-->
+   <footer class="section footer-matrix text-center fade-section fade-up">
+  <h2 class="footer-title">Contacto</h2>
+  <p class="footer-text">Puedes encontrarme en las siguientes plataformas:</p>
+
+  <div class="social-links">
+    <a href="https://github.com/ivanriveraf" target="_blank" class="social-link">
+      <span class="social-icon-circle">
+        <i class="fab fa-github"></i>
+      </span>
+      <span class="social-label">GitHub</span>
+    </a>
+
+    <a href="https://www.instagram.com/ivan.rifu/" target="_blank" class="social-link">
+      <span class="social-icon-circle">
+        <i class="fab fa-instagram"></i>
+      </span>
+      <span class="social-label">Instagram</span>
+    </a>
+
+    <a href="https://www.linkedin.com/in/ivan-patricio-rivera-fuentealba-921491179/" target="_blank" class="social-link">
+      <span class="social-icon-circle">
+        <i class="fab fa-linkedin"></i>
+      </span>
+      <span class="social-label">LinkedIn</span>
+    </a>
+  </div>
+
+  <p class="footer-copy mt-3">
+    &copy; 2025 Iván Patricio Rivera Fuentealba — Portafolio Matrix.
+  </p>
+</footer>
   </div>
 
   <!-- Scripts -->
@@ -97,7 +279,7 @@
     }, { threshold: 0.1 });
     sections.forEach(section => observer.observe(section));
 
-    // jQuery Toggle Proyectos
+    // jQuery Toggle Proyectos (ahora sí apunta a la sección correcta)
     $('#toggleProyectos').on('click', function () {
       $('#proyectos').toggle('slow');
     });
