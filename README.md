@@ -2,7 +2,7 @@
 
 ### 🔥 Desarrollador Web en Formación | JavaScript • Node.js • Express • SQL
 
-![Matrix Banner](https://i.imgur.com/1V1XhQn.gif)
+![Matrix Banner](https://upload.wikimedia.org/wikipedia/commons/2/20/Matrix_Digital_rain_banner.gif)
 
 > *Portafolio inspirado en la estética digital de Matrix, presentando mis proyectos más relevantes y el progreso de mi formación como desarrollador.*
 
