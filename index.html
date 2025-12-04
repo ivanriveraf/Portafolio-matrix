@@ -13,8 +13,43 @@
 
   <!-- Estilos personalizados -->
   <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
 </head>
 <body>
+  <!-- NAVBAR MATRIX -->
+<nav class="matrix-nav">
+  <div class="nav-container">
+    <!-- Perfil (avatar + nombre) -->
+    <div class="nav-profile">
+      <img 
+        src="assets/img/perfil_mio_resized.jpg" 
+        alt="Foto de Iván Rivera" 
+        class="nav-avatar"
+      />
+      <div class="nav-text">
+        <span class="nav-name">Iván Rivera</span>
+        <span class="nav-role">Desarrollador Fullstack</span>
+      </div>
+    </div>
+
+    <!-- Botón hamburguesa (mobile) -->
+    <button class="nav-toggle" id="navToggle">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <!-- Links navegación -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#bienvenida">Inicio</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#footer">Contacto</a></li>
+    </ul>
+  </div>
+</nav>
+
+
   <!-- Canvas Matrix -->
   <canvas id="matrixCanvas"></canvas>
 
@@ -194,7 +229,7 @@
 
               <div class="project-links">
                 <a href="https://github.com/ivanriveraf/API-REST-con-JWT-y-Bcrypt" target="_blank" class="btn btn-sm btn-outline-light">Ver código</a>
-                <a href="TU_LINK_DEMO_API" target="_blank" class="btn btn-sm btn-outline-success">Ver demo</a>
+                <a href="https://api-jwt-ivan.onrender.com/" target="_blank" class="btn btn-sm btn-outline-success">Ver demo</a>
               </div>
             </div>
           </div>
@@ -359,7 +394,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="section footer-matrix text-center fade-section fade-up">
+    <footer id="footer" class="section footer-matrix text-center fade-section fade-up">
       <h2 class="footer-title">Contacto</h2>
       <p class="footer-text">Puedes encontrarme en las siguientes plataformas:</p>
 
@@ -392,31 +427,67 @@
     </footer>
   </div>
 
-  <!-- Scripts -->
+    <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="assets/js/matrix.js"></script>
+
+  <!-- Script de interacción de la página -->
   <script>
-    // Scroll Reveal con IntersectionObserver
-    const sections = document.querySelectorAll('.fade-section');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+    $(function () {
+      // 1. Scroll Reveal con IntersectionObserver
+      const sections = document.querySelectorAll('.fade-section');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+      sections.forEach(section => observer.observe(section));
+
+      // 2. Botón Mostrar/Ocultar Proyectos (animación simple)
+          $('#toggleProyectos').on('click', function () {
+          $('#proyectos').toggle('slow');   // desliza y desaparece / aparece, sin scroll automático
+            });
+
+
+      // 3. Toggle del menú móvil (hamburger)
+      $('#navToggle').on('click', function () {
+        $('#navLinks').toggleClass('open');
       });
-    }, { threshold: 0.1 });
-    sections.forEach(section => observer.observe(section));
 
-    // jQuery Toggle Proyectos
-    $('#toggleProyectos').on('click', function () {
-      $('#proyectos').toggle('slow');
-    });
+      // 4. Función para mostrar la sección de proyectos y hacer scroll
+      function mostrarYScrollProyectos() {
+        const $proyectos = $('#proyectos');
+        const proyectosEl = document.querySelector('#proyectos');
 
-    // Scroll suave al hacer clic en "Ver proyectos"
-    document.querySelectorAll('a[href="#proyectos"]').forEach(link => {
-      link.addEventListener('click', function (e) {
+        if (!$proyectos.is(':visible')) {
+          // Mostrar primero y luego scroll
+          $proyectos.slideDown('slow', function () {
+            proyectosEl.scrollIntoView({ behavior: 'smooth' });
+          });
+        } else {
+          proyectosEl.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+
+      // 5. Enlaces que apuntan a #proyectos (navbar + botón "Ver proyectos")
+      $('a[href="#proyectos"]').on('click', function (e) {
         e.preventDefault();
-        document.querySelector('#proyectos').scrollIntoView({ behavior: 'smooth' });
+        mostrarYScrollProyectos();
+        // Cerrar menú móvil si está abierto
+        $('#navLinks').removeClass('open');
+      });
+
+      // 6. Enlaces que apuntan a #footer (Contacto)
+      $('a[href="#footer"]').on('click', function (e) {
+        e.preventDefault();
+        const footer = document.querySelector('#footer');
+        if (footer) {
+          footer.scrollIntoView({ behavior: 'smooth' });
+        }
+        // Cerrar menú móvil si está abierto
+        $('#navLinks').removeClass('open');
       });
     });
   </script>

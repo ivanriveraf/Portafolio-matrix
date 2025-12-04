@@ -31,3 +31,5 @@ window.addEventListener('load', () => {
 
   setInterval(drawMatrix, 35);
 });
+
+

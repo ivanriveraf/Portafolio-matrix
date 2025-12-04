@@ -1,3 +1,8 @@
+/* ===== Estilos generales ===== */
+body {
+  padding-top: 70px;
+}
+
 /* Fondo canvas matrix */
 canvas#matrixCanvas {
   position: fixed;
@@ -81,6 +86,10 @@ body::before {
   align-items: center;
 }
 
+.hero-section .bio-text {
+  max-width: 650px;
+}
+
 .hero-layout {
   align-items: center;
   justify-content: space-between;
@@ -127,6 +136,12 @@ body::before {
 .hero-btn {
   border-radius: 999px;
   padding: 8px 18px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(0, 255, 136, 0.6);
 }
 
 /* Responsive hero */
@@ -165,18 +180,19 @@ body::before {
 .project-card {
   background: rgba(0, 0, 0, 0.7);
   border-radius: 12px;
-  padding: 20px;
+  padding: 22px 20px 24px;                 
   border-left: 4px solid #00ff88;
   border-top: 1px solid rgba(0, 255, 136, 0.4);
   border-right: 1px solid rgba(0, 255, 136, 0.2);
   border-bottom: 1px solid rgba(0, 255, 136, 0.2);
   box-shadow: 0 0 10px rgba(0, 255, 136, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;                  
 }
-
 .project-card:hover {
   transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 0 25px rgba(0, 255, 136, 0.45);
+  box-shadow: 0 0 25px rgba(0, 255, 136, 0.35);
 }
 
 /* Títulos de proyectos */
@@ -203,20 +219,24 @@ body::before {
 
 /* Links/botones en tarjetas */
 .project-links {
-  margin-top: 12px;
+  margin-top: 18px;                        
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
+/* Botones en las tarjetas */
 .project-links .btn {
   font-size: 0.9rem;
-  padding: 8px 14px;
-  border-radius: 8px;
-  margin-right: 6px;
-  margin-top: 4px;
+  padding: 8px 16px;
+  border-radius: 999px;
 }
+
 
 .project-links .btn:hover {
   box-shadow: 0 0 12px #00ff88;
 }
+
 
 /* Mini barra de progreso (decorativa) */
 .project-skill {
@@ -390,4 +410,150 @@ body::before {
     padding: 0 10px;
   }
 }
+
+/* ===========================
+   NAVBAR MATRIX
+=========================== */
+
+.matrix-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.22);
+  border-bottom: 1px solid rgba(0, 255, 136, 0.5);
+  z-index: 1000;
+  padding: 12px 0;                         
+  box-shadow: 0 0 8px rgba(0, 255, 136, 0.18);
+}
+
+.nav-container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;                     
+  justify-content: space-between;
+}
+
+/* Perfil izquierda */
+.nav-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.nav-avatar {
+  width: 64px;               /* tamaño visible en pantalla */
+  height: 64px;
+  border-radius: 50%;        /* recorte circular */
+  object-fit: cover;         /* recorta sin deformar */
+  border: 2px solid #00ff88; /* borde Matrix */
+  box-shadow: 0 0 12px rgba(0, 255, 136, 0.7);
+  display: block;
+}
+
+.nav-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.nav-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #eaffea;
+  text-transform: uppercase;
+}
+
+.nav-role {
+  font-size: 0.8rem;
+  color: #9f9;
+  opacity: 0.9;
+}
+
+/* Links de escritorio */
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;                     
+  gap: 18px;
+}
+
+.nav-links li a {
+  color: #c8ffb0;
+  font-size: 1.05rem;
+  text-decoration: none;
+  padding: 8px 18px;                       
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: 0.2s ease;
+}
+
+.nav-links li a:hover {
+  color: #00ff88;
+  border-color: rgba(0, 255, 136, 0.7);
+  background: rgba(0, 255, 136, 0.08);
+  text-shadow: 0 0 8px #00ff88;
+}
+
+
+/* Botón hamburguesa (solo móvil) */
+.nav-toggle {
+  background: none;
+  border: none;
+  color: #00ff88;
+  font-size: 1.6rem;
+  cursor: pointer;
+  display: none;      /* se muestra en móvil */
+}
+
+/* Compensar altura de la navbar */
+body {
+  padding-top: 80px;
+}
+
+/* ========== RESPONSIVE NAV ========== */
+
+@media (max-width: 768px) {
+  .nav-container {
+    gap: 10px;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    right: 0;
+    top: 60px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 0 22px;
+    display: none;
+    border-top: 1px solid #00ff88;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li a {
+    font-size: 1.1rem;
+  }
+}
+
+
+/* Scroll suave */
+html {
+  scroll-behavior: smooth;
+}
+
 /* ===== Fin styles.css ===== */
