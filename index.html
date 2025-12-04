@@ -21,54 +21,134 @@
   <!-- Contenido principal -->
   <div class="content container">
 
-   <section id="bienvenida" class="section hero-section fade-section fade-scale">
-  <div class="bio-container hero-layout">
-    <!-- Columna imagen + aviso -->
-    <div class="hero-photo text-center text-md-start">
-      <img 
-        src="assets/img/perfil_mio_resized.jpg" 
-        alt="Foto de Iván Patricio Rivera Fuentealba" 
-        class="foto" 
-        id="fotoPerfil" 
-      />
-      <p class="mt-2 aviso-foto">
-        Haz clic en mi foto para ver mi biografía completa.
-      </p>
-    </div>
+    <!-- Hero / Bienvenida -->
+    <section id="bienvenida" class="section hero-section fade-section fade-scale">
+      <div class="bio-container hero-layout">
+        <!-- Columna avatar -->
+        <div class="hero-photo text-center text-md-start">
+          <div class="matrix-avatar">
+            IV
+          </div>
+        </div>
 
-    <!-- Columna texto -->
-    <div class="bio-text">
-      <h1 class="hero-title">Iván Rivera Desarrollador Fullstack</h1>
-      <p class="hero-subtitle">
-        Desarrollador web en formación, con enfoque en JavaScript, Node.js y la creación de 
-        aplicaciones claras, funcionales y orientadas a la experiencia de usuario. 
-        Aquí encontrarás algunos de los proyectos que he desarrollado durante mi formación 
-        en Talento Digital y a través de aprendizaje autodidacta.
-      </p>
-      <p class="hero-extra">
-        Este portafolio está inspirado en la estética de Matrix y reúne mis trabajos más 
-        representativos en APIs REST, autenticación, manejo de archivos, simulaciones y sitios web informativos.
-      </p>
-    </div>
-  </div>
+        <!-- Columna texto -->
+        <div class="bio-text">
+          <h1 class="hero-title">Iván Rivera - Desarrollador Fullstack en JavaScript</h1>
+        <p class="hero-subtitle">
+           Desarrollador web en formación con foco en JavaScript, Node.js y Express. 
+            Disfruto crear aplicaciones simples, claras y útiles.
+        </p>
+        <p class="hero-extra">
+          Aquí encontrarás algunos de los proyectos que he desarrollado para practicar APIs REST, 
+          autenticación, manejo de archivos y sitios web responsivos.
+        </p>
 
-  <!-- Sección emergente con más info -->
-  <div id="detallePerfil" class="text-center fade-section fade-up">
-    <img 
-      src="assets/img/perfil_mio_resized.jpg" 
-      alt="Foto ampliada de Iván" 
-    />
-    <p class="mt-2 text-success">
-      Soy desarrollador web en formación con interés en construir aplicaciones claras, 
-      funcionales y fáciles de usar. Durante mi proceso de aprendizaje he trabajado con 
-      JavaScript, Node.js, Express, bases de datos y APIs REST, desarrollando proyectos 
-      que van desde simuladores y sistemas de autoservicio hasta aplicaciones con autenticación 
-      y manejo de archivos. Me motiva seguir aprendiendo, mejorar la calidad de mi código 
-      y aportar en equipos donde pueda crecer tanto a nivel técnico como humano.
-    </p>
-  </div>
-</section>
 
+          <div class="hero-actions">
+            <a href="#proyectos" class="btn btn-sm btn-outline-success hero-btn">
+              Ver proyectos
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+        <!-- Sección Stack Técnico -->
+    <section id="stack" class="section stack-section fade-section fade-up">
+      <div class="container">
+        <h2 class="text-center mb-4">Stack técnico</h2>
+        <p class="text-center mb-4">
+          Estas son algunas de las tecnologías con las que he trabajado durante mi formación.
+        </p>
+
+        <div class="row g-4">
+          <!-- Lenguajes -->
+          <div class="col-md-6 col-lg-4">
+            <div class="stack-card h-100">
+              <h3 class="stack-title">
+                <i class="fa-solid fa-code me-2"></i> Lenguajes
+              </h3>
+              <div class="stack-badges">
+                <span class="stack-badge">JavaScript (ES6+)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Frontend -->
+          <div class="col-md-6 col-lg-4">
+            <div class="stack-card h-100">
+              <h3 class="stack-title">
+                <i class="fa-solid fa-display me-2"></i> Frontend
+              </h3>
+              <div class="stack-badges">
+                <span class="stack-badge">HTML5</span>
+                <span class="stack-badge">CSS3</span>
+                <span class="stack-badge">Bootstrap</span>
+                <span class="stack-badge">jQuery</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div class="col-md-6 col-lg-4">
+            <div class="stack-card h-100">
+              <h3 class="stack-title">
+                <i class="fa-solid fa-server me-2"></i> Backend
+              </h3>
+              <div class="stack-badges">
+                <span class="stack-badge">Node.js</span>
+                <span class="stack-badge">Express</span>
+                <span class="stack-badge">JWT</span>
+                <span class="stack-badge">Multer</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bases de datos -->
+          <div class="col-md-6 col-lg-4">
+            <div class="stack-card h-100">
+              <h3 class="stack-title">
+                <i class="fa-solid fa-database me-2"></i> Bases de datos
+              </h3>
+              <div class="stack-badges">
+                <span class="stack-badge">MySQL</span>
+                <span class="stack-badge">PostgreSQL</span>
+                <span class="stack-badge">Sequelize ORM</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Herramientas -->
+          <div class="col-md-6 col-lg-4">
+            <div class="stack-card h-100">
+              <h3 class="stack-title">
+                <i class="fa-solid fa-screwdriver-wrench me-2"></i> Herramientas
+              </h3>
+              <div class="stack-badges">
+                <span class="stack-badge">Git</span>
+                <span class="stack-badge">GitHub</span>
+                <span class="stack-badge">VS Code</span>
+                <span class="stack-badge">Postman</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Otros -->
+          <div class="col-md-6 col-lg-4">
+            <div class="stack-card h-100">
+              <h3 class="stack-title">
+                <i class="fa-solid fa-layer-group me-2"></i> Otros
+              </h3>
+              <div class="stack-badges">
+                <span class="stack-badge">Diseño responsivo</span>
+                <span class="stack-badge">APIs REST</span>
+                <span class="stack-badge">Buenas prácticas básicas</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
 
     <!-- Botón jQuery -->
     <div class="text-center">
@@ -77,20 +157,23 @@
       </button>
     </div>
 
-    <!-- Sección Proyectos (adaptada) -->
-<section id="proyectos" class="section projects-section py-5 fade-section fade-up">
+    <!-- Sección Proyectos -->
+    <section id="proyectos" class="section projects-section py-5 fade-section fade-up">
       <div class="container">
         <h2 class="text-center mb-4">Proyectos Destacados</h2>
         <p class="text-center mb-5">
-          Estos son algunos de los proyectos que desarrollé durante el bootcamp, 
-          enfocados en JavaScript, Node.js y buenas prácticas de desarrollo web.
+            Algunos de los proyectos que desarrollé durante el bootcamp para practicar lógica, 
+            backend con Node.js y desarrollo web moderno.
         </p>
+
 
         <div class="row g-4">
           <!-- Proyecto 1: API REST -->
           <div class="col-md-6 col-lg-4">
             <div class="project-card h-100">
-              <h3 class="project-title">API REST con JWT y Bcrypt</h3>
+              <h3 class="project-title">
+                <i class="fa-solid fa-server me-2"></i> API REST con JWT y Bcrypt
+              </h3>
               <p class="project-description">
                 API REST para gestión de usuarios con registro, login y protección de rutas
                 mediante autenticación JWT y encriptación de contraseñas con Bcrypt.
@@ -101,8 +184,16 @@
               <p class="project-learning">
                 <strong>Aprendizaje:</strong> manejo de autenticación, middleware y seguridad básica.
               </p>
+
+              <div class="project-skill">
+                <span class="skill-label">Backend</span>
+                <div class="skill-bar">
+                  <div class="skill-bar-fill" style="width: 85%;"></div>
+                </div>
+              </div>
+
               <div class="project-links">
-                <a href="TU_LINK_GITHUB_API" target="_blank" class="btn btn-sm btn-outline-light">Ver código</a>
+                <a href="https://github.com/ivanriveraf/API-REST-con-JWT-y-Bcrypt" target="_blank" class="btn btn-sm btn-outline-light">Ver código</a>
                 <a href="TU_LINK_DEMO_API" target="_blank" class="btn btn-sm btn-outline-success">Ver demo</a>
               </div>
             </div>
@@ -111,7 +202,9 @@
           <!-- Proyecto 2: Mini red social -->
           <div class="col-md-6 col-lg-4">
             <div class="project-card h-100">
-              <h3 class="project-title">Mini red social con likes</h3>
+              <h3 class="project-title">
+                <i class="fa-solid fa-users me-2"></i> Mini red social con likes
+              </h3>
               <p class="project-description">
                 Aplicación donde los usuarios pueden publicar contenido, dar like e interactuar 
                 con imágenes y textos, simulando una red social básica.
@@ -122,6 +215,14 @@
               <p class="project-learning">
                 <strong>Aprendizaje:</strong> manejo de imágenes, rutas y actualización dinámica del DOM.
               </p>
+
+              <div class="project-skill">
+                <span class="skill-label">Frontend / UI</span>
+                <div class="skill-bar">
+                  <div class="skill-bar-fill" style="width: 75%;"></div>
+                </div>
+              </div>
+
               <div class="project-links">
                 <a href="TU_LINK_GITHUB_REDSOCIAL" target="_blank" class="btn btn-sm btn-outline-light">Ver código</a>
                 <a href="TU_LINK_DEMO_REDSOCIAL" target="_blank" class="btn btn-sm btn-outline-success">Ver demo</a>
@@ -132,7 +233,9 @@
           <!-- Proyecto 3: Carga y validación de archivos -->
           <div class="col-md-6 col-lg-4">
             <div class="project-card h-100">
-              <h3 class="project-title">Gestor de archivos con Multer</h3>
+              <h3 class="project-title">
+                <i class="fa-solid fa-file-arrow-up me-2"></i> Gestor de archivos con Multer
+              </h3>
               <p class="project-description">
                 Sistema para subir, validar, renombrar y eliminar archivos en el servidor,
                 incluyendo validaciones de tipo y tamaño.
@@ -143,6 +246,14 @@
               <p class="project-learning">
                 <strong>Aprendizaje:</strong> manejo de uploads, validaciones avanzadas y manejo de errores.
               </p>
+
+              <div class="project-skill">
+                <span class="skill-label">Manejo de archivos</span>
+                <div class="skill-bar">
+                  <div class="skill-bar-fill" style="width: 80%;"></div>
+                </div>
+              </div>
+
               <div class="project-links">
                 <a href="TU_LINK_GITHUB_MULTER" target="_blank" class="btn btn-sm btn-outline-light">Ver código</a>
                 <a href="TU_LINK_DEMO_MULTER" target="_blank" class="btn btn-sm btn-outline-success">Ver demo</a>
@@ -153,7 +264,9 @@
           <!-- Proyecto 4: Autoservicio supermercado -->
           <div class="col-md-6 col-lg-4">
             <div class="project-card h-100">
-              <h3 class="project-title">Simulador de autoservicio</h3>
+              <h3 class="project-title">
+                <i class="fa-solid fa-cart-shopping me-2"></i> Simulador de autoservicio
+              </h3>
               <p class="project-description">
                 Simulación de una terminal de autoservicio de supermercado con registro de compras,
                 descuentos y validaciones de entrada.
@@ -164,6 +277,14 @@
               <p class="project-learning">
                 <strong>Aprendizaje:</strong> lógica de negocio, validaciones y manejo de estados en el front.
               </p>
+
+              <div class="project-skill">
+                <span class="skill-label">Lógica de negocio</span>
+                <div class="skill-bar">
+                  <div class="skill-bar-fill" style="width: 70%;"></div>
+                </div>
+              </div>
+
               <div class="project-links">
                 <a href="TU_LINK_GITHUB_AUTOSERVICIO" target="_blank" class="btn btn-sm btn-outline-light">Ver código</a>
                 <a href="TU_LINK_DEMO_AUTOSERVICIO" target="_blank" class="btn btn-sm btn-outline-success">Ver demo</a>
@@ -174,7 +295,9 @@
           <!-- Proyecto 5: Ciberseguridad -->
           <div class="col-md-6 col-lg-4">
             <div class="project-card h-100">
-              <h3 class="project-title">Sitio de ciberseguridad</h3>
+              <h3 class="project-title">
+                <i class="fa-solid fa-shield-halved me-2"></i> Sitio de ciberseguridad
+              </h3>
               <p class="project-description">
                 Sitio informativo sobre buenas prácticas de ciberseguridad para usuarios
                 que comienzan en el mundo digital.
@@ -185,6 +308,14 @@
               <p class="project-learning">
                 <strong>Aprendizaje:</strong> estructura de contenido, diseño responsivo y experiencia de usuario.
               </p>
+
+              <div class="project-skill">
+                <span class="skill-label">Frontend / Contenido</span>
+                <div class="skill-bar">
+                  <div class="skill-bar-fill" style="width: 75%;"></div>
+                </div>
+              </div>
+
               <div class="project-links">
                 <a href="TU_LINK_GITHUB_CIBERSEGURIDAD" target="_blank" class="btn btn-sm btn-outline-light">Ver código</a>
                 <a href="TU_LINK_DEMO_CIBERSEGURIDAD" target="_blank" class="btn btn-sm btn-outline-success">Ver demo</a>
@@ -195,7 +326,9 @@
           <!-- Proyecto 6: Tienda online -->
           <div class="col-md-6 col-lg-4">
             <div class="project-card h-100">
-              <h3 class="project-title">Tienda online con Node y Sequelize</h3>
+              <h3 class="project-title">
+                <i class="fa-solid fa-store me-2"></i> Tienda online con Node y Sequelize
+              </h3>
               <p class="project-description">
                 Tienda online con manejo de productos, base de datos, modelos y operaciones CRUD
                 utilizando Sequelize.
@@ -206,6 +339,14 @@
               <p class="project-learning">
                 <strong>Aprendizaje:</strong> ORM, modelos, migraciones y conexión a base de datos.
               </p>
+
+              <div class="project-skill">
+                <span class="skill-label">Backend + BD</span>
+                <div class="skill-bar">
+                  <div class="skill-bar-fill" style="width: 80%;"></div>
+                </div>
+              </div>
+
               <div class="project-links">
                 <a href="TU_LINK_GITHUB_TIENDA" target="_blank" class="btn btn-sm btn-outline-light">Ver código</a>
                 <a href="TU_LINK_DEMO_TIENDA" target="_blank" class="btn btn-sm btn-outline-success">Ver demo</a>
@@ -217,57 +358,44 @@
       </div>
     </section>
 
-        <!--footer-->
-   <footer class="section footer-matrix text-center fade-section fade-up">
-  <h2 class="footer-title">Contacto</h2>
-  <p class="footer-text">Puedes encontrarme en las siguientes plataformas:</p>
+    <!-- Footer -->
+    <footer class="section footer-matrix text-center fade-section fade-up">
+      <h2 class="footer-title">Contacto</h2>
+      <p class="footer-text">Puedes encontrarme en las siguientes plataformas:</p>
 
-  <div class="social-links">
-    <a href="https://github.com/ivanriveraf" target="_blank" class="social-link">
-      <span class="social-icon-circle">
-        <i class="fab fa-github"></i>
-      </span>
-      <span class="social-label">GitHub</span>
-    </a>
+      <div class="social-links">
+        <a href="https://github.com/ivanriveraf" target="_blank" class="social-link">
+          <span class="social-icon-circle">
+            <i class="fab fa-github"></i>
+          </span>
+          <span class="social-label">GitHub</span>
+        </a>
 
-    <a href="https://www.instagram.com/ivan.rifu/" target="_blank" class="social-link">
-      <span class="social-icon-circle">
-        <i class="fab fa-instagram"></i>
-      </span>
-      <span class="social-label">Instagram</span>
-    </a>
+        <a href="https://www.instagram.com/ivan.rifu/" target="_blank" class="social-link">
+          <span class="social-icon-circle">
+            <i class="fab fa-instagram"></i>
+          </span>
+          <span class="social-label">Instagram</span>
+        </a>
 
-    <a href="https://www.linkedin.com/in/ivan-patricio-rivera-fuentealba-921491179/" target="_blank" class="social-link">
-      <span class="social-icon-circle">
-        <i class="fab fa-linkedin"></i>
-      </span>
-      <span class="social-label">LinkedIn</span>
-    </a>
-  </div>
+        <a href="https://www.linkedin.com/in/ivan-patricio-rivera-fuentealba-921491179/" target="_blank" class="social-link">
+          <span class="social-icon-circle">
+            <i class="fab fa-linkedin"></i>
+          </span>
+          <span class="social-label">LinkedIn</span>
+        </a>
+      </div>
 
-  <p class="footer-copy mt-3">
-    &copy; 2025 Iván Patricio Rivera Fuentealba — Portafolio Matrix.
-  </p>
-</footer>
+      <p class="footer-copy mt-3">
+        &copy; 2025 Iván Patricio Rivera Fuentealba — Portafolio Matrix.
+      </p>
+    </footer>
   </div>
 
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="assets/js/matrix.js"></script>
   <script>
-    // Mostrar u ocultar detalle de perfil al hacer click
-    $('#fotoPerfil').on('click', function (e) {
-      e.stopPropagation(); // prevenir que se cierre inmediatamente
-      $('#detallePerfil').slideToggle('slow');
-    });
-
-    // Cerrar al hacer click fuera del contenedor
-    $(document).on('click', function (e) {
-      if (!$(e.target).closest('#detallePerfil, #fotoPerfil').length) {
-        $('#detallePerfil').slideUp('slow');
-      }
-    });
-
     // Scroll Reveal con IntersectionObserver
     const sections = document.querySelectorAll('.fade-section');
     const observer = new IntersectionObserver((entries) => {
@@ -279,9 +407,17 @@
     }, { threshold: 0.1 });
     sections.forEach(section => observer.observe(section));
 
-    // jQuery Toggle Proyectos (ahora sí apunta a la sección correcta)
+    // jQuery Toggle Proyectos
     $('#toggleProyectos').on('click', function () {
       $('#proyectos').toggle('slow');
+    });
+
+    // Scroll suave al hacer clic en "Ver proyectos"
+    document.querySelectorAll('a[href="#proyectos"]').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector('#proyectos').scrollIntoView({ behavior: 'smooth' });
+      });
     });
   </script>
 </body>

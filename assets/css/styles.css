@@ -9,12 +9,12 @@ canvas#matrixCanvas {
   background-color: black;
 }
 
-/*Capa oscura encima del fondo para bajar intensidad del efecto */
+/* Capa oscura encima del fondo para bajar intensidad del efecto */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6); 
+  background: rgba(0, 0, 0, 0.6);
   z-index: 0;
   pointer-events: none;
 }
@@ -22,11 +22,11 @@ body::before {
 /* Estilo general del contenido */
 .content {
   position: relative;
-  z-index: 1; 
-  color: #c8ffb0; 
+  z-index: 1;
+  color: #c8ffb0;
   font-family: 'Courier New', Courier, monospace;
   padding-top: 30px;
-  line-height: 1.6; 
+  line-height: 1.6;
 }
 
 /* Secciones */
@@ -35,24 +35,20 @@ body::before {
   background-color: rgba(0, 0, 0, 0.75);
   border-radius: 10px;
   margin-bottom: 40px;
-  box-shadow: 0 0 15px rgba(0, 255, 0, 0.4); 
-  transition: opacity 1s ease, transform 1s ease;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
 }
 
-/* Base para todas las animaciones de scroll */
+/* Animaciones base */
 .fade-section {
   opacity: 0;
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-/* Cuando entra en pantalla, se le agrega .visible desde JS */
 .fade-section.visible {
   opacity: 1;
 }
 
-/* Variantes de animación */
-
-/* Escala suave  */
+/* Escala suave para el hero */
 .fade-scale {
   transform: scale(0.95);
 }
@@ -61,7 +57,7 @@ body::before {
   transform: scale(1);
 }
 
-/* Sube desde abajo */
+/* Sube desde abajo para proyectos y footer */
 .fade-up {
   transform: translateY(25px);
 }
@@ -70,31 +66,7 @@ body::before {
   transform: translateY(0);
 }
 
-
-/* Imagen de perfil */
-.foto {
-  width: 150px;
-  max-width: 150px;  
-  height: auto;       
-  border-radius: 50%;
-  border: 3px solid #00ff00;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-  display: block;
-}
-
-.aviso-foto {
-  font-size: 0.85rem;
-  color: #9f9;
-  opacity: 0.9;
-}
-
-.foto:hover {
-  box-shadow: 0 0 10px 5px #00ff00;
-  transform: scale(1.03);
-  cursor: pointer;
-}
-
-/* Bio */
+/* Layout general bio/hero */
 .bio-container {
   display: flex;
   align-items: center;
@@ -114,17 +86,21 @@ body::before {
   justify-content: space-between;
 }
 
-/* Columna de la foto en el hero */
-.hero-photo {
-  flex: 0 0 auto;
+/* Avatar Matrix (reemplaza foto real) */
+.matrix-avatar {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 3px solid #00ff00;
+  color: #00ff00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 15px #00ff00;
+  margin: 0 auto;
 }
-/* Imagen de la foto en el hero */
-.hero-photo img {
-  width: 150px;
-  max-width: 150px;
-  height: auto;
-}
-
 
 /* Textos del hero */
 .hero-title {
@@ -144,32 +120,13 @@ body::before {
   color: #9f9;
 }
 
-/* Sección ampliada de perfil */
-#detallePerfil {
-  display: none;
-  background-color: rgba(0, 0, 0, 0.85);
-  border: 2px solid #00ff00;
-  border-radius: 10px;
-  padding: 20px;
-  margin-top: 20px;
-  animation: fadeIn 0.5s ease-in-out;
+.hero-actions {
+  margin-top: 15px;
 }
 
-#detallePerfil img {
-  max-width: 200px;
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  border: 2px solid #0f0;
-  margin-bottom: 10px;
-}
-
-
-/* Aviso debajo de la foto */
-.aviso-foto {
-  font-size: 0.85rem;
-  color: #9f9;
-  opacity: 0.9;
+.hero-btn {
+  border-radius: 999px;
+  padding: 8px 18px;
 }
 
 /* Responsive hero */
@@ -190,47 +147,150 @@ body::before {
   .hero-subtitle {
     font-size: 1rem;
   }
+
+  .matrix-avatar {
+    width: 110px;
+    height: 110px;
+    font-size: 2rem;
+  }
 }
 
+/* ===== Proyectos ===== */
 
-.bio-text h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  color: #00ff88; 
+.projects-section h2 {
+  color: #00ff88;
 }
 
-.bio-text p {
-  font-size: 1.1rem;
-  color: #d4ffd4; 
-}
-
-/* Proyectos */
-.proyecto {
-  background-color: rgba(0, 0, 0, 0.8); 
-  border: 1px solid #00ff88;
-  text-align: center;
-  border-radius: 10px;
+/* Tarjetas de proyecto */
+.project-card {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
   padding: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  border-left: 4px solid #00ff88;
+  border-top: 1px solid rgba(0, 255, 136, 0.4);
+  border-right: 1px solid rgba(0, 255, 136, 0.2);
+  border-bottom: 1px solid rgba(0, 255, 136, 0.2);
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.proyecto:hover {
-  transform: scale(1.05);
-  background-color: rgba(0, 255, 0, 0.18);
-  box-shadow: 0 0 18px rgba(0, 255, 136, 0.4);
+.project-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 0 25px rgba(0, 255, 136, 0.45);
 }
 
+/* Títulos de proyectos */
 .project-title {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: bold;
-  color: #00ff88; /* verde brillante */
+  color: #00ff88;
   margin-bottom: 12px;
   padding-bottom: 6px;
-  border-bottom: 1px solid rgba(0, 255, 136, 0.4); /* subrayado neón suave */
-  text-shadow: 0 0 6px rgba(0, 255, 136, 0.6); /* glow */
+  border-bottom: 1px solid rgba(0, 255, 136, 0.4);
+  text-shadow: 0 0 6px rgba(0, 255, 136, 0.6);
+  display: flex;
+  align-items: center;
 }
 
-/* Footer Matrix pro */
+/* Texto de las tarjetas */
+.project-description,
+.project-tech,
+.project-learning {
+  margin-bottom: 10px;
+  line-height: 1.45;
+  color: #d4ffd4;
+}
+
+/* Links/botones en tarjetas */
+.project-links {
+  margin-top: 12px;
+}
+
+.project-links .btn {
+  font-size: 0.9rem;
+  padding: 8px 14px;
+  border-radius: 8px;
+  margin-right: 6px;
+  margin-top: 4px;
+}
+
+.project-links .btn:hover {
+  box-shadow: 0 0 12px #00ff88;
+}
+
+/* Mini barra de progreso (decorativa) */
+.project-skill {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.skill-label {
+  font-size: 0.8rem;
+  color: #9f9;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 6px;
+  background: rgba(0, 255, 136, 0.1);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00ff88, #00ffaa);
+  box-shadow: 0 0 8px rgba(0, 255, 136, 0.9);
+}
+
+/* ===== Stack técnico ===== */
+
+.stack-section h2 {
+  color: #00ff88;
+}
+
+.stack-card {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  padding: 18px 16px;
+  border: 1px solid rgba(0, 255, 136, 0.4);
+  box-shadow: 0 0 12px rgba(0, 255, 136, 0.15);
+  height: 100%;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.stack-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.45);
+}
+
+.stack-title {
+  font-size: 1.1rem;
+  color: #00ff88;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.stack-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.stack-badge {
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 255, 136, 0.6);
+  color: #c8ffb0;
+  background: rgba(0, 255, 136, 0.08);
+}
+
+
+/* ===== Footer Matrix pro ===== */
+
 .footer-matrix {
   background-color: rgba(0, 0, 0, 0.85);
   border-top: 1px solid #00ff88;
@@ -330,6 +390,4 @@ body::before {
     padding: 0 10px;
   }
 }
-
-/* Fin styles.css */
-
+/* ===== Fin styles.css ===== */
