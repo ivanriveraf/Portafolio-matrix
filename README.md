@@ -61,7 +61,7 @@ Me apasiona construir soluciones lógicas, mejorar la calidad de mi código y ap
 ### 🔹 **API REST con JWT y Bcrypt**
 ✔ Registro, login y protección de rutas  
 ✔ Hash de contraseñas + middleware de autenticación  
-🔗 **Repositorio:** [Ver código](TU_LINK_GITHUB_API)
+🔗 **Repositorio:** [Ver código](https://github.com/ivanriveraf/API-REST-con-JWT-y-Bcrypt)
 
 ---
 
@@ -69,42 +69,41 @@ Me apasiona construir soluciones lógicas, mejorar la calidad de mi código y ap
 ✔ Publicaciones con imágenes  
 ✔ Sistema de likes dinámicos  
 ✔ Manejo de archivos con Multer  
-🔗 **Repositorio:** [Ver código](TU_LINK_GITHUB_REDSOCIAL)
+🔗 **Repositorio:** [Ver código](https://github.com/ivanriveraf/mini-red-social)
 
 ---
 
 ### 🔹 **Sistema de carga y validación de archivos**
 ✔ Subida, validación y eliminación de archivos  
 ✔ Manejo seguro de archivos y rutas  
-🔗 **Repositorio:** [Ver código](TU_LINK_GITHUB_MULTER)
+🔗 **Repositorio:** [Ver código](https://github.com/ivanriveraf/gestor-archivos-multer)
 
 ---
 
 ### 🔹 **Simulador de autoservicio de supermercado**
 ✔ Registro de compras  
 ✔ Validaciones + descuentos  
-🔗 **Repositorio:** [Ver código](TU_LINK_GITHUB_AUTOSERVICIO)
+🔗 **Repositorio:** [Ver código](https://github.com/ivanriveraf/simulador-autoservicio)
 
 ---
 
 ### 🔹 **Sitio informativo de ciberseguridad**
 ✔ Diseño responsivo  
 ✔ Contenidos educativos  
-🔗 **Repositorio:** [Ver código](TU_LINK_GITHUB_CIBERSEGURIDAD)
+🔗 **Repositorio:** [Ver código](https://github.com/ivanriveraf/ciberseguridad-amenazas-consejos)
 
 ---
 
 ### 🔹 **Tienda online con Node + Sequelize**
 ✔ CRUD de productos  
 ✔ Modelos + migraciones + conexión a BD  
-🔗 **Repositorio:** [Ver código](TU_LINK_GITHUB_TIENDA)
+🔗 **Repositorio:** [Ver código](https://github.com/ivanriveraf/tienda-libros-jwt)
 
 ---
 
 ## 🌐 Demo del Portafolio
 
 👉 **https://ivanriveraf.github.io/Portafolio-matrix/**  
-*(Si aún no está desplegado, puedo ayudarte a configurarlo.)*
 
 ---
 
